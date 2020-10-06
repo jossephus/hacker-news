@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import store from "../redux/store";
 function App() {
   return (	
-	<div className="h-screen flex flex-col mt-2  mx-32 ">
+	<div className="h-screen mx-0 flex flex-col mt-2  lg:mx-32 ">
 			<Provider store={store}>
 				<Navbar />
 			  	<Switch>

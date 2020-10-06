@@ -1,10 +1,11 @@
 import axios from "axios";
-import { FETCH_STORY_REQUEST , FETCH_STORY_SUCCESS , FETCH_STORY_FAILURE , FETCH_COMMENT_SUCCESS,  FETCH_STORY_FINISH  } from "./story-constants";
+import { CLEAR_PREVIOUS_COMMENT ,  FETCH_STORY_REQUEST , FETCH_STORY_SUCCESS , FETCH_STORY_FAILURE , FETCH_COMMENT_SUCCESS,  FETCH_STORY_FINISH  } from "./story-constants";
  const fetchStoryRequest = () => {
 	return {
 		type : FETCH_STORY_REQUEST ,
 	}
 }
+
  const fetchStorySuccess = (story) => {
  	console.log("Actions fetchStorySuccess ");
 	return {
@@ -33,7 +34,12 @@ const fetchCommentSuccess = (comment , nestingNumber) => {
 	}
 }
 
-					let nestingNumber = 0;
+export const clearPreviousData = () => {
+	return {
+		type : CLEAR_PREVIOUS_COMMENT,
+	}
+}
+let nestingNumber = 0;
 
 export const fetchStory = (id) => {
 	return (dispatch) => {

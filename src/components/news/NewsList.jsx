@@ -1,6 +1,6 @@
 import React , {useState} from "react";
 import SingleNews from "./SingleNews";
-function NewsList({news}) {
+function NewsList({news }) {
 	const [index , setIndex] = useState(0);
 	const addIndex = () => {
 		setIndex(prevIndex => {

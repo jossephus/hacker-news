@@ -1,4 +1,4 @@
-import { FETCH_STORY_REQUEST , FETCH_STORY_SUCCESS , FETCH_COMMENT_SUCCESS  , FETCH_STORY_FINISH , FETCH_STORY_FAILURE  } from "./story-constants";
+import { FETCH_STORY_REQUEST , CLEAR_PREVIOUS_COMMENT , FETCH_STORY_SUCCESS , FETCH_COMMENT_SUCCESS  , FETCH_STORY_FINISH , FETCH_STORY_FAILURE  } from "./story-constants";
 const initialState = {
 	loading : false,
 	story : {} , 
@@ -39,6 +39,12 @@ const storyReducer = (state=initialState , action) =>{
 					comment :  action.payloads.comment , 
 					nestingNumber :  action.payloads.nestingNumber,
 				}] , 
+				loading : true,
+			}
+		case CLEAR_PREVIOUS_COMMENT:
+			return {
+				...state , 
+				comments : [] , 
 				loading : true,
 			}
 		default:

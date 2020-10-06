@@ -23,7 +23,7 @@ function HomePage(props) {
 			{news.news.length === 0 ? <h1 className="text-center">Loading Stories</h1> : <NewsList news={news.news}/> }
 			
 			<div className="px-2 py-2 bg-gray-900  text-center text-white ">
-				<button onClick={fetchTopNewsController}>Next</button>
+				<button className="w-full focus:outline-none " onClick={fetchTopNewsController}>Next</button>
 			</div>
 		
 		</div>
